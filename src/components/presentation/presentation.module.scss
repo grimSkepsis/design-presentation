@@ -1,7 +1,6 @@
 .presentationWrapper {
   min-width: 100vw;
   min-height: 100vh;
-  background: grey;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,8 +13,9 @@
 .contentWrapper {
   max-width: 80rem;
   flex-grow: 1;
-  background: blue;
   width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .footer {
@@ -23,6 +23,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   button:not(:first-of-type) {
     margin-left: 1rem;
   }
