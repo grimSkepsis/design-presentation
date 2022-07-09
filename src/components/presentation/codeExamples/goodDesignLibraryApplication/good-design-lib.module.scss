@@ -1,0 +1,49 @@
+.goodExamples {
+  display: flex;
+  flex-direction: column;
+  button {
+    &:not(:first-of-type) {
+      margin-top: 1rem;
+    }
+  }
+}
+
+@keyframes hover {
+  from {
+    transform: translate3d(0, 0.2rem, 0);
+
+    // box-shadow: 2px 5px #888888;
+  }
+
+  to {
+    transform: translate3d(0, -0.2rem, 0);
+
+    // box-shadow: 5px 10px #888888;
+  }
+}
+
+.liveButton {
+  animation-iteration-count: infinite;
+  animation-name: hover;
+  animation-duration: 1s;
+
+  animation-direction: alternate;
+}
+
+.exampleContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitles {
+  display: flex;
+  h3:not(:first-child) {
+    margin-left: 6rem;
+  }
+}
