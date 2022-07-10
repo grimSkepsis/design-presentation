@@ -3,6 +3,7 @@ import { ChangeEvent, createContext, useContext, useState } from "react";
 import { Slide } from "./types";
 import styles from "./presentation.module.scss";
 import { Brightness4, Brightness7 } from "@mui/icons-material";
+import { useKeyPress } from "../../hooks/useKeyPress";
 
 type Props = {
   slides: Slide[];
@@ -20,6 +21,20 @@ export function Presentation({ slides }: Props) {
   }
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
+
+  useKeyPress(["a", "d", "D", "d", "t", "T"], (key: string) => {
+    if ((key === "a" || key === "A") && currSlideIdx > 0) {
+      setCurrSlideIdx(currSlideIdx - 1);
+    } else if (
+      (key === "d" || key === "D") &&
+      currSlideIdx < slides.length - 1
+    ) {
+      setCurrSlideIdx(currSlideIdx + 1);
+    } else if (key === "t" || key === "T") {
+      colorMode.toggleColorMode();
+    }
+  });
+
   return (
     <main className={`${styles.presentationWrapper}`}>
       <Typography variant="h3" component="h1" gutterBottom>
@@ -31,6 +46,7 @@ export function Presentation({ slides }: Props) {
           count={slides.length}
           color="primary"
           onChange={changePage}
+          page={currSlideIdx + 1}
         />
         <IconButton
           sx={{ ml: 1 }}

@@ -2,6 +2,7 @@ import { TitleSlide } from "./components/titleSlide";
 import { Slide } from "./components/presentation/types";
 import { PointedListSlide } from "./components/presentation/pointedListSlide";
 import { GoodDesignLibrarySlide } from "./components/presentation/codeExamples/goodDesignLibraryApplication";
+import { BadDesignLibrarySlide } from "./components/presentation/codeExamples/badDesignLibraryApplication";
 
 export function getSlides(): Slide[] {
   return [
@@ -46,6 +47,28 @@ export function getSlides(): Slide[] {
     {
       title: "Example applications:",
       content: <GoodDesignLibrarySlide />,
+    },
+    {
+      title: "Prebuilt design system limitations",
+      content: (
+        <PointedListSlide
+          leftList={[
+            "Very married to the  base look and feel, animations, etc. 💍 ",
+            "Can look generic without any changes, but more changes make it harder to maintain between versions",
+            "If devs don't use the api correctly/provide a custom wrapper for the api maintainability is hurt",
+            "Styling system may not be compatible with your app's out of the box (eg less vs sass vs styled components)",
+          ]}
+        />
+      ),
+    },
+    {
+      title: "Example of a bad modification",
+      content: <BadDesignLibrarySlide />,
+    },
+
+    {
+      title: "Example of a bad modification",
+      content: <BadDesignLibrarySlide state={1} />,
     },
   ];
 }
