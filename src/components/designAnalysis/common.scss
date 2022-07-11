@@ -1,0 +1,32 @@
+@import "../../vars.scss";
+
+@mixin sectionHighlight($color) {
+  background: $color;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+  animation: fade;
+  animation-duration: 500ms;
+}
+
+.label {
+  background: #010101;
+  width: fit-content;
+  color: white;
+  padding: 0.2rem;
+  margin-left: auto;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+
+    // box-shadow: 2px 5px #888888;
+  }
+
+  to {
+    opacity: 0.5;
+
+    // box-shadow: 5px 10px #888888;
+  }
+}

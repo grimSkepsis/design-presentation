@@ -1,14 +1,4 @@
-@import "../../vars.scss";
-
-@mixin sectionHighlight($color) {
-  background: $color;
-  opacity: 0.5;
-  position: absolute;
-  width: 100%;
-  animation: fade;
-  animation-duration: 500ms;
-}
-
+@import "./common.scss";
 .card {
   max-width: 100%;
   max-height: 35rem;

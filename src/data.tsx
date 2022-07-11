@@ -4,6 +4,7 @@ import { PointedListSlide } from "./components/pointedListSlide";
 import { GoodDesignLibrarySlide } from "./components/codeExamples/goodDesignLibraryApplication";
 import { BadDesignLibrarySlide } from "./components/codeExamples/badDesignLibraryApplication";
 import { VanillaVisualCard } from "./components/designAnalysis/vanilla";
+import { NewExample } from "./components/designAnalysis/newExample";
 
 export function getSlides(): Slide[] {
   return [
@@ -17,26 +18,11 @@ export function getSlides(): Slide[] {
       ),
     },
     {
-      title: "Table of contents",
-      content: (
-        <PointedListSlide
-          leftList={[
-            "Intro",
-            "Table of Contents",
-            "Approaches to applying design systems",
-            "Indepth breakdown of VisualCard component",
-            "Higher level overview of modular workflow design",
-          ]}
-        />
-      ),
-    },
-    {
       title: "Why use a prebuilt design system/library?",
       content: (
         <PointedListSlide
           leftList={[
-            "Allows quick development of workflow",
-            "Fills in low-level niche components that have complicated specs but deliver low value/aren't widely used",
+            "Fills in low-level components so we can focus on workflows",
             "Built-in accessiblity, cross browser support, mobile scaling",
             "Docs + importable design assets",
             "Provide a functional base we can apply our own aesthetic on top of",
@@ -55,9 +41,8 @@ export function getSlides(): Slide[] {
         <PointedListSlide
           leftList={[
             "Very married to the  base look and feel, animations, etc. 💍 ",
-            "Can look generic without any changes, but more changes make it harder to maintain between versions",
-            "If devs don't use the api correctly maintainability is hurt",
-            "Styling system may not be compatible with your app out of the box (eg less vs sass vs styled components)",
+            "Tension between making changes to customize and preserving maintainability",
+            "Styling system may not be compatible with your app out of the box",
           ]}
         />
       ),
@@ -76,7 +61,6 @@ export function getSlides(): Slide[] {
       content: (
         <PointedListSlide
           leftList={[
-            "As custom as you want",
             "Can tailor ui to your domain space",
             "Get to make all the decisions in terms of api/visual language/etc",
             "Can be a bit less generalized if only for internal use",
@@ -85,24 +69,10 @@ export function getSlides(): Slide[] {
       ),
     },
     {
-      title: "Custom design system cons",
-      content: (
-        <PointedListSlide
-          leftList={[
-            "Making even simple components look good in a variety of contexts (resolution, browser, device, etc.) is hard and time consuming",
-            "We incur all the cost of documentation, api, and library updates",
-            "HAVE to make all the decisions in terms of api/visual language/etc.",
-            "Without dedicated repos/packages it's hard to gate modification",
-            "A lot of overhead to get up and running and will incur tech debt until it is",
-          ]}
-        />
-      ),
-    },
-    {
       title: "",
       content: (
         <TitleSlide
-          title={"Visier Demo"}
+          title={"Example ui: Visier People"}
           subTitle={
             <a
               href="https://www.visier.com/tour/visier-people/"
@@ -116,9 +86,23 @@ export function getSlides(): Slide[] {
       ),
     },
     {
+      title: "Custom design system cons",
+      content: (
+        <PointedListSlide
+          leftList={[
+            "Making even simple components look good in a variety of contexts is difficult",
+            "We incur all the cost of documentation, api, and library updates",
+            "Without dedicated repos/packages it's hard to gate modification",
+            "A lot of overhead to get up and running",
+          ]}
+        />
+      ),
+    },
+
+    {
       title: "",
       content: (
-        <TitleSlide title={"Design/Development Analsysis: Visual Cards"} />
+        <TitleSlide title={"Design/Development Analysis: Visual Cards"} />
       ),
     },
 
@@ -152,11 +136,62 @@ export function getSlides(): Slide[] {
         <PointedListSlide
           leftList={[
             "Used pixel perfect positioning to achieve predictable and attractive layouts",
-            "Any new variance in content required the creation of new magic pixel values to layout the content",
-            "As new premutations were imagined this would cause the number of premutations to exponentially increase",
+            "Had a handful of polished variations",
+            "Any new content we wanted to render would require a new suite of pixel values",
           ]}
         />
       ),
+    },
+
+    {
+      title: "Modern Visual Cards",
+      content: <NewExample state={0} />,
+    },
+    {
+      title: "Modern Visual Cards",
+      content: <NewExample state={1} />,
+    },
+    {
+      title: "Modern Visual Cards",
+      content: <NewExample state={2} />,
+    },
+    {
+      title: "Modern Visual Cards",
+      content: <NewExample state={3} />,
+    },
+    {
+      title: "Modern Visual Cards",
+      content: <NewExample state={4} />,
+    },
+    {
+      title: "Modern Visual Cards",
+      content: <NewExample state={5} />,
+    },
+    {
+      title: "Modern Visual Cards",
+      content: <NewExample state={6} />,
+    },
+
+    {
+      title: "Modern Visual Cards",
+      content: <NewExample state={7} />,
+    },
+
+    {
+      title: "Modern Visual Card Overview",
+      content: (
+        <PointedListSlide
+          leftList={[
+            "Uses reflowable layout which can be less consistent but offers more support for variation",
+            "Makes charts that require legends intelligible, saving the user from having to navigate to a more detailed screen",
+            "As more and more varied card layouts are brainstormed we can be confident that we will be able to support them out of the box",
+          ]}
+        />
+      ),
+    },
+    {
+      title: "",
+      content: <TitleSlide title={"FIN"} subTitle={"Questions?"} />,
     },
   ];
 }

@@ -1,6 +1,8 @@
 .wrapper {
   ul li {
     font-size: 2rem;
+    text-decoration: none;
+    display: block;
     &:not(:first-of-type) {
       margin-top: 5rem;
     }
