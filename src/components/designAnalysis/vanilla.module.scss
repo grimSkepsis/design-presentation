@@ -1,0 +1,59 @@
+@import "../../vars.scss";
+
+@mixin sectionHighlight($color) {
+  background: $color;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+  animation: fade;
+  animation-duration: 500ms;
+}
+
+.card {
+  max-width: 100%;
+  max-height: 35rem;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.label {
+  background: #010101;
+  width: fit-content;
+  color: white;
+  padding: 0.2rem;
+  margin-left: auto;
+}
+
+.titleSectionHighlight {
+  @include sectionHighlight($colors-util-1);
+  height: 10%;
+  top: 0;
+}
+
+.visualSectionHighlight {
+  @include sectionHighlight($colors-util-2);
+  height: 74%;
+  top: 10%;
+}
+
+.summarySectionHighlight {
+  @include sectionHighlight($colors-util-3);
+  height: 16%;
+  top: 84%;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+
+    // box-shadow: 2px 5px #888888;
+  }
+
+  to {
+    opacity: 0.5;
+
+    // box-shadow: 5px 10px #888888;
+  }
+}

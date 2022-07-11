@@ -22,15 +22,12 @@ export function Presentation({ slides }: Props) {
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
 
-  useKeyPress(["a", "d", "D", "d", "t", "T"], (key: string) => {
-    if ((key === "a" || key === "A") && currSlideIdx > 0) {
+  useKeyPress(["ArrowLeft", "ArrowRight", "t", "T"], (key: string) => {
+    if (key === "ArrowLeft" && currSlideIdx > 0) {
       setCurrSlideIdx(currSlideIdx - 1);
-    } else if (
-      (key === "d" || key === "D") &&
-      currSlideIdx < slides.length - 1
-    ) {
+    } else if (key === "ArrowRight" && currSlideIdx < slides.length - 1) {
       setCurrSlideIdx(currSlideIdx + 1);
-    } else if (key === "t" || key === "T") {
+    } else if (key === "T" || key === "t") {
       colorMode.toggleColorMode();
     }
   });

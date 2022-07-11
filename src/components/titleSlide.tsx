@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 
 type Props = {
   title: string;
-  subTitle?: string;
+  subTitle?: string | JSX.Element;
 };
 export function TitleSlide({ title, subTitle }: Props) {
   return (
